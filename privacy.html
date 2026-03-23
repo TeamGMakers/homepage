@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Team G Makers</title>
+    <meta name="description" content="Team G Makers 개인정보 처리방침">
+    <style>
+        :root {
+            --primary: #2D3436;
+            --accent: #6C5CE7;
+            --accent-light: #A29BFE;
+            --bg: #FAFAFA;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-300: #E0E0E0;
+            --gray-500: #9E9E9E;
+            --gray-700: #616161;
+            --gray-900: #212121;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            color: var(--gray-900);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-300);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--gray-900);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ── Page Header ── */
+        .page-header {
+            padding: 140px 24px 60px;
+            text-align: center;
+            background: linear-gradient(160deg, #FAFAFA 0%, #F0EDFF 50%, #FFF0F6 100%);
+        }
+
+        .page-header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 0.92rem;
+            color: var(--gray-500);
+        }
+
+        /* ── Policy Content ── */
+        .policy-content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .policy-section p {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 10px;
+        }
+
+        .policy-section ul li {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .policy-section ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.88rem;
+        }
+
+        .policy-table th,
+        .policy-table td {
+            border: 1px solid var(--gray-300);
+            padding: 12px 14px;
+            text-align: left;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        .policy-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-500);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.82rem;
+        }
+
+        footer a {
+            color: var(--gray-500);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: var(--white); }
+
+        .footer-links { margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--gray-300);
+            }
+
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+
+            .policy-table { font-size: 0.82rem; }
+            .policy-table th, .policy-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">Team <span>G</span> Makers</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <h1>개인정보 처리방침</h1>
+    <p>시행일: 2025년 1월 1일</p>
+</section>
+
+<!-- Policy Content -->
+<div class="policy-content">
+
+    <div class="policy-section">
+        <h2>1. 개인정보의 처리 목적</h2>
+        <p>Team G Makers(이하 "회사")는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+        <ul>
+            <li>서비스 제공 및 운영</li>
+            <li>고객 문의 응대 및 불만 처리</li>
+            <li>서비스 개선 및 신규 서비스 개발</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>2. 수집하는 개인정보 항목</h2>
+        <table class="policy-table">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>수집 항목</th>
+                    <th>수집 방법</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>필수</td>
+                    <td>이메일 주소</td>
+                    <td>회원가입, 문의 접수</td>
+                </tr>
+                <tr>
+                    <td>자동 수집</td>
+                    <td>기기 정보, OS 버전, 앱 버전, 접속 로그</td>
+                    <td>서비스 이용 시 자동 생성</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="policy-section">
+        <h2>3. 개인정보의 보유 및 이용 기간</h2>
+        <p>회사는 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관련 법령에 의해 보존할 필요가 있는 경우 해당 법령에서 정한 기간 동안 개인정보를 보관합니다.</p>
+        <ul>
+            <li>계약 또는 청약철회 등에 관한 기록: 5년</li>
+            <li>소비자의 불만 또는 분쟁처리에 관한 기록: 3년</li>
+            <li>접속에 관한 기록: 3개월</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>4. 개인정보의 제3자 제공</h2>
+        <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+        <ul>
+            <li>이용자가 사전에 동의한 경우</li>
+            <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>5. 개인정보의 파기 절차 및 방법</h2>
+        <p>회사는 개인정보 보유 기간의 경과, 처리 목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다.</p>
+        <ul>
+            <li>전자적 파일 형태: 복구 및 재생이 불가능한 방법으로 파기</li>
+            <li>종이 문서: 분쇄기로 분쇄하거나 소각</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>6. 이용자의 권리와 행사 방법</h2>
+        <p>이용자는 언제든지 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다. 아래 연락처로 요청해 주시면 지체 없이 조치하겠습니다.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>7. 개인정보 보호책임자</h2>
+        <p>회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만 처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+        <ul>
+            <li>회사명: Team G Makers</li>
+            <li>이메일: connie@teamgmakers.com</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>8. 개인정보 처리방침 변경</h2>
+        <p>이 개인정보 처리방침은 2025년 1월 1일부터 적용됩니다. 법령이나 방침에 따른 변경 내용의 추가, 삭제 및 수정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.</p>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 Team G Makers. All rights reserved.</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>
