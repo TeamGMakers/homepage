@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team G Makers | 콘텐츠 크리에이션</title>
+    <meta name="description" content="Team G Makers - 창의적인 콘텐츠로 세상을 연결합니다.">
+    <style>
+        :root {
+            --primary: #2D3436;
+            --accent: #6C5CE7;
+            --accent-light: #A29BFE;
+            --warm: #FD79A8;
+            --bg: #FAFAFA;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-300: #E0E0E0;
+            --gray-500: #9E9E9E;
+            --gray-700: #616161;
+            --gray-900: #212121;
+            --radius: 12px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            color: var(--gray-900);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-300);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--gray-900);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ── Hero Section ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            background: linear-gradient(160deg, #FAFAFA 0%, #F0EDFF 50%, #FFF0F6 100%);
+        }
+
+        .hero-content { max-width: 680px; }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(108,92,231,0.08);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--accent), var(--warm));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(108,92,231,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #5A4BD1;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(108,92,231,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gray-700);
+            border: 1.5px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ── Sections Common ── */
+        section { padding: 100px 24px; }
+
+        .section-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: var(--gray-700);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        /* ── Services ── */
+        .services { background: var(--white); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .service-card {
+            padding: 36px 28px;
+            background: var(--gray-100);
+            border-radius: var(--radius);
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            background: var(--white);
+            border-color: var(--gray-300);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .service-icon.purple { background: rgba(108,92,231,0.1); }
+        .service-icon.pink { background: rgba(253,121,168,0.1); }
+        .service-icon.blue { background: rgba(116,185,255,0.1); }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--gray-900);
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        /* ── About ── */
+        .about { background: var(--bg); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 48px;
+            align-items: center;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, var(--accent-light), var(--warm));
+            border-radius: var(--radius);
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-visual-text {
+            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            opacity: 0.9;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 28px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--gray-500);
+            margin-top: 2px;
+        }
+
+        /* ── Contact ── */
+        .contact {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact .section-label { color: var(--accent-light); }
+        .contact .section-title { color: var(--white); }
+
+        .contact .section-desc {
+            color: rgba(255,255,255,0.7);
+            margin: 0 auto 36px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-email:hover { color: var(--white); }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-500);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.82rem;
+        }
+
+        footer a {
+            color: var(--gray-500);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: var(--white); }
+
+        .footer-links { margin-bottom: 12px; }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--gray-300);
+            }
+
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-visual { height: 200px; }
+            .stats { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="logo">Team <span>G</span> Makers</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-badge">Content Creation Studio</div>
+        <h1>창의적인 콘텐츠로<br><em>세상을 연결</em>합니다</h1>
+        <p>Team G Makers는 아이디어를 현실로 만드는 콘텐츠 크리에이션 회사입니다.<br>앱, 영상, 디자인 — 모든 형태의 콘텐츠를 만듭니다.</p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">서비스 알아보기</a>
+            <a href="#contact" class="btn btn-outline">문의하기</a>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+    <div class="section-inner">
+        <div class="section-label">Services</div>
+        <div class="section-title">우리가 하는 일</div>
+        <p class="section-desc">다양한 분야의 콘텐츠를 기획하고 제작합니다.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon purple">&#9878;</div>
+                <h3>앱 서비스</h3>
+                <p>사용자 중심의 모바일 앱을 기획하고 개발합니다. 아이디어부터 출시까지, 모든 과정을 함께합니다.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon pink">&#9733;</div>
+                <h3>콘텐츠 제작</h3>
+                <p>브랜드의 이야기를 전달하는 영상, 이미지, 텍스트 콘텐츠를 제작합니다.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon blue">&#9826;</div>
+                <h3>디자인 & 브랜딩</h3>
+                <p>일관된 브랜드 경험을 만드는 UI/UX 디자인과 브랜드 아이덴티티를 설계합니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+    <div class="section-inner">
+        <div class="section-label">About</div>
+        <div class="section-title">Team G Makers</div>
+        <div class="about-grid">
+            <div class="about-visual">
+                <div class="about-visual-text">TGM</div>
+            </div>
+            <div class="about-text">
+                <h3>만드는 사람들의 팀</h3>
+                <p>Team G Makers는 '만드는 것'을 좋아하는 사람들이 모인 팀입니다. 우리는 기술과 창의성의 교차점에서 사람들에게 가치를 전달하는 콘텐츠를 만듭니다.</p>
+                <p>작은 아이디어라도 세상에 내놓을 가치가 있다고 믿으며, 그 과정을 즐기는 팀입니다.</p>
+                <div class="stats">
+                    <div>
+                        <div class="stat-number">2025</div>
+                        <div class="stat-label">Since</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">Seoul</div>
+                        <div class="stat-label">Based in</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="section-inner">
+        <div class="section-label">Contact</div>
+        <div class="section-title">함께 만들어요</div>
+        <p class="section-desc">프로젝트 문의, 협업 제안, 무엇이든 편하게 연락해 주세요.</p>
+        <a href="mailto:connie@teamgmakers.com" class="contact-email">connie@teamgmakers.com</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 Team G Makers. All rights reserved.</p>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
