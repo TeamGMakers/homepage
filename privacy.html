@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Team G Makers</title>
     <meta name="description" content="Team G Makers 개인정보 처리방침">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
     <style>
         :root {
             --primary: #2D3436;
@@ -323,7 +326,7 @@
         <p>회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만 처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
         <ul>
             <li>회사명: Team G Makers</li>
-            <li>이메일: connie@teamgmakers.com</li>
+            <li>이메일: <span class="privacy-email"></span></li>
         </ul>
     </div>
 
@@ -356,6 +359,14 @@
             navLinks.classList.remove('active');
         });
     });
+
+    // Email obfuscation
+    (function() {
+        const u = 'connie'; const d = 'teamgmakers.com';
+        document.querySelectorAll('.privacy-email').forEach(el => {
+            el.textContent = u + '@' + d;
+        });
+    })();
 </script>
 
 </body>

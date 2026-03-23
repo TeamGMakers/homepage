@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team G Makers | 콘텐츠 크리에이션</title>
     <meta name="description" content="Team G Makers - 창의적인 콘텐츠로 세상을 연결합니다.">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
     <style>
         :root {
             --primary: #2D3436;
@@ -487,7 +490,7 @@
         <div class="section-label">Contact</div>
         <div class="section-title">함께 만들어요</div>
         <p class="section-desc">프로젝트 문의, 협업 제안, 무엇이든 편하게 연락해 주세요.</p>
-        <a href="mailto:connie@teamgmakers.com" class="contact-email">connie@teamgmakers.com</a>
+        <a href="#" class="contact-email" id="contactEmail"></a>
     </div>
 </section>
 
@@ -515,6 +518,14 @@
             navLinks.classList.remove('active');
         });
     });
+
+    // Email obfuscation
+    (function() {
+        const u = 'connie'; const d = 'teamgmakers.com';
+        const el = document.getElementById('contactEmail');
+        el.href = 'mailto:' + u + '@' + d;
+        el.textContent = u + '@' + d;
+    })();
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
