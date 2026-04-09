@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support | Team G Makers</title>
-    <meta name="description" content="Team G Makers 고객 지원 - 문의 및 도움이 필요하시면 연락해 주세요.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>ParkingLog Support | Team G Makers</title>
+    <meta name="description" content="ParkingLog 앱 고객 지원 - 주차 위치 기록 앱 사용법, FAQ, 문의 안내">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
@@ -80,7 +80,6 @@
         }
 
         .nav-links a:hover { color: var(--accent); }
-        .nav-links a.active { color: var(--accent); }
 
         .menu-toggle {
             display: none;
@@ -117,16 +116,88 @@
         .page-header p {
             font-size: 1.05rem;
             color: var(--gray-700);
-            max-width: 480px;
+            max-width: 520px;
             margin: 0 auto;
             line-height: 1.7;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* ── App Intro ── */
+        .app-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 0;
+        }
+
+        .app-intro-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            border: 1px solid var(--gray-300);
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .app-info h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .app-info p {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .app-features {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .app-feature-tag {
+            padding: 4px 12px;
+            background: rgba(108,92,231,0.08);
+            color: var(--accent);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         /* ── Support Content ── */
         .support-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 60px 24px 100px;
+            padding: 40px 24px 0;
         }
 
         .support-card {
@@ -180,7 +251,9 @@
 
         /* ── FAQ ── */
         .faq-section {
-            margin-top: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 100px;
         }
 
         .faq-title {
@@ -212,10 +285,12 @@
             font-size: 1.2rem;
             color: var(--gray-500);
             transition: transform 0.2s;
+            flex-shrink: 0;
+            margin-left: 16px;
         }
 
         .faq-item.open .faq-question::after {
-            content: '−';
+            content: '\2212';
             color: var(--accent);
         }
 
@@ -229,7 +304,7 @@
         }
 
         .faq-item.open .faq-answer {
-            max-height: 200px;
+            max-height: 300px;
             padding-top: 12px;
         }
 
@@ -271,6 +346,14 @@
             .nav-links.active { display: flex; }
             .menu-toggle { display: block; }
 
+            .app-intro-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px 20px;
+            }
+
+            .app-features { justify-content: center; }
+
             .support-card { padding: 28px 20px; }
         }
     </style>
@@ -280,12 +363,12 @@
 <!-- Navigation -->
 <nav>
     <div class="nav-inner">
-        <a href="index.html" class="logo">Team <span>G</span> Makers</a>
+        <a href="../index.html" class="logo">Team <span>G</span> Makers</a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-            <li><a href="support.html" class="active">Support</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../support.html">Support</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
             <span></span><span></span><span></span>
@@ -295,49 +378,82 @@
 
 <!-- Page Header -->
 <section class="page-header">
-    <h1>고객 지원</h1>
-    <p>도움이 필요하시면 아래 방법으로 연락해 주세요.<br>빠르게 답변드리겠습니다.</p>
+    <div class="breadcrumb"><a href="../support.html">Support</a> &rsaquo; ParkingLog</div>
+    <h1>ParkingLog 지원</h1>
+    <p>주차 위치 기록 앱 ParkingLog에 대한 안내와 자주 묻는 질문을 확인하세요.</p>
 </section>
 
-<!-- Support Content -->
-<div class="support-content">
+<!-- App Introduction -->
+<div class="app-intro">
+    <div class="app-intro-card">
+        <div class="app-icon">P</div>
+        <div class="app-info">
+            <h2>ParkingLog</h2>
+            <p>ParkingLog는 주차 위치를 간편하게 기록하고 관리할 수 있는 iOS 앱입니다. GPS를 활용해 현재 주차 위치를 저장하고, 사진과 메모를 함께 기록하여 주차 위치를 쉽게 찾을 수 있도록 도와줍니다.</p>
+            <div class="app-features">
+                <span class="app-feature-tag">위치 기록</span>
+                <span class="app-feature-tag">사진 저장</span>
+                <span class="app-feature-tag">iCloud 동기화</span>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Contact -->
+<div class="support-content">
     <div class="support-card">
         <div class="support-card-icon">&#9993;</div>
-        <h3>이메일 문의</h3>
-        <p>서비스 이용 중 불편사항이나 궁금한 점이 있으시면 이메일로 문의해 주세요.</p>
-        <a href="#" class="email-link" data-subject=""></a>
+        <h3>문의하기</h3>
+        <p>앱 사용 중 불편사항이나 오류가 발생하면 아래 이메일로 문의해 주세요. 사용 중인 기기 모델과 iOS 버전을 함께 알려주시면 더 빠른 지원이 가능합니다.</p>
+        <a href="#" class="email-link" data-subject="[ParkingLog] 앱 문의">문의 이메일 보내기</a>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+    <h2 class="faq-title">자주 묻는 질문 (FAQ)</h2>
+
+    <div class="faq-item">
+        <div class="faq-question">ParkingLog는 어떤 앱인가요?</div>
+        <div class="faq-answer">ParkingLog는 주차 위치를 GPS로 기록하고, 사진과 메모를 함께 저장할 수 있는 앱입니다. 넓은 주차장이나 낯선 장소에서 주차한 위치를 쉽게 찾을 수 있도록 도와줍니다.</div>
     </div>
 
-    <div class="support-card">
-        <div class="support-card-icon">&#128663;</div>
-        <h3>ParkingLog 앱 지원</h3>
-        <p>주차 위치 기록 앱 ParkingLog에 대한 사용 안내, 자주 묻는 질문, 문의 방법을 확인하세요.</p>
-        <a href="support/parkinglog.html">ParkingLog 지원 페이지 바로가기</a>
+    <div class="faq-item">
+        <div class="faq-question">위치 권한은 왜 필요한가요?</div>
+        <div class="faq-answer">주차 위치를 정확하게 기록하기 위해 GPS 위치 정보를 사용합니다. 위치 정보는 기기 내부 또는 사용자 본인의 iCloud 계정에만 저장되며, 외부 서버로 전송되지 않습니다.</div>
     </div>
 
-    <div class="support-card">
-        <div class="support-card-icon">&#128172;</div>
-        <h3>기타 앱 문의</h3>
-        <p>앱 사용 중 오류가 발생하거나 기능 개선 요청이 있으시면 알려주세요. 기기 정보와 함께 보내주시면 더 빠른 지원이 가능합니다.</p>
-        <a href="#" class="email-link" data-subject="앱 문의">앱 문의 보내기</a>
+    <div class="faq-item">
+        <div class="faq-question">카메라 및 사진 라이브러리 권한은 왜 필요한가요?</div>
+        <div class="faq-answer">주차 위치와 함께 주변 사진을 촬영하거나, 기존 사진을 첨부하여 주차 위치를 더 쉽게 식별할 수 있도록 하기 위해 사용됩니다.</div>
     </div>
 
-    <div class="support-card">
-        <div class="support-card-icon">&#128100;</div>
-        <h3>계정 및 개인정보</h3>
-        <p>계정 삭제, 개인정보 열람·정정·삭제 요청 등은 이메일로 요청해 주시면 관련 법령에 따라 처리해 드립니다.</p>
-        <a href="privacy.html">개인정보 처리방침 보기</a>
+    <div class="faq-item">
+        <div class="faq-question">데이터는 어디에 저장되나요?</div>
+        <div class="faq-answer">모든 데이터는 사용자의 기기 또는 본인의 iCloud 계정에 저장됩니다. Team G Makers의 외부 서버로 데이터가 전송되지 않으므로 안심하고 사용하실 수 있습니다.</div>
     </div>
 
+    <div class="faq-item">
+        <div class="faq-question">다른 기기에서도 데이터를 볼 수 있나요?</div>
+        <div class="faq-answer">같은 Apple ID로 로그인된 기기에서 iCloud 동기화를 통해 데이터를 공유할 수 있습니다. 설정에서 iCloud 동기화가 활성화되어 있는지 확인해 주세요.</div>
+    </div>
 
+    <div class="faq-item">
+        <div class="faq-question">계정을 삭제하고 싶어요.</div>
+        <div class="faq-answer">계정 삭제를 원하시면 <span class="faq-email"></span>으로 요청해 주세요. 관련 법령에 따라 처리해 드립니다. 앱 내 데이터는 앱을 삭제하면 기기에서 제거되며, iCloud 데이터는 iCloud 설정에서 직접 삭제하실 수 있습니다.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">앱이 정상적으로 작동하지 않아요.</div>
+        <div class="faq-answer">앱을 최신 버전으로 업데이트하고, 기기를 재시작해 보세요. 문제가 지속되면 사용 중인 기기 모델, iOS 버전, 오류 상황을 포함하여 <span class="faq-email"></span>으로 문의해 주세요.</div>
+    </div>
 </div>
 
 <!-- Footer -->
 <footer>
     <div class="footer-links">
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy Policy</a>
     </div>
     <p>&copy; 2025 Team G Makers. All rights reserved.</p>
 </footer>
