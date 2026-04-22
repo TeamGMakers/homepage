@@ -368,6 +368,7 @@
             <li><a href="../index.html#services">Services</a></li>
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../notice.html">Notice</a></li>
             <li><a href="../support.html">Support</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
@@ -421,7 +422,7 @@
 
     <div class="faq-item">
         <div class="faq-question">위치 권한은 왜 필요한가요?</div>
-        <div class="faq-answer">주차 위치를 저장할 때 GPS 좌표를 자동으로 기록하기 위해 사용합니다. 위치 정보는 사용자의 기기에만 저장되며, 외부 서버로 전송되지 않습니다.</div>
+        <div class="faq-answer">주차 위치를 저장할 때 GPS 좌표를 자동으로 기록하기 위해 사용합니다. 위치 정보는 사용자의 기기에 저장되며, iCloud 동기화가 켜져 있는 경우 사용자 본인의 iCloud 계정에 함께 저장됩니다. Team G Makers의 자체 서버로는 전송되지 않습니다.</div>
     </div>
 
     <div class="faq-item">
@@ -436,12 +437,17 @@
 
     <div class="faq-item">
         <div class="faq-question">데이터는 어디에 저장되나요?</div>
-        <div class="faq-answer">모든 데이터는 사용자의 기기에만 저장됩니다. Team G Makers의 외부 서버로 데이터가 전송되지 않으므로 안심하고 사용하실 수 있습니다.</div>
+        <div class="faq-answer">데이터는 사용자의 기기와, iCloud 동기화가 켜져 있는 경우 사용자 본인의 iCloud 계정(CloudKit Private Database)에 저장됩니다. Team G Makers는 자체 서버를 운영하지 않으며, iCloud에 저장된 데이터에 직접 접근할 수 없습니다. 자세한 사항은 <a href="../privacy.html">개인정보 처리방침</a>의 국외이전·처리위탁 조항을 참고해 주세요.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">iCloud 동기화를 끄고 싶어요.</div>
+        <div class="faq-answer">기기 설정 → Apple ID → iCloud → ParkHere 토글을 끄시면 iCloud 동기화가 중단되고 앱이 로컬 전용 모드로 전환됩니다. 끄기 이전에 iCloud에 저장된 데이터는 기기 설정에서 직접 삭제하실 수 있습니다.</div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question">데이터를 삭제하고 싶어요.</div>
-        <div class="faq-answer">앱을 삭제하면 기기에 저장된 모든 주차 기록이 함께 제거됩니다. 개별 기록은 히스토리 화면에서 삭제할 수 있습니다. 기타 문의사항은 <span class="faq-email"></span>으로 연락해 주세요.</div>
+        <div class="faq-answer">개별 기록은 히스토리 화면에서 스와이프로 삭제할 수 있으며, 삭제 시 iCloud에서도 함께 제거됩니다. 앱을 삭제하면 기기에 저장된 데이터는 즉시 제거되지만, iCloud에 저장된 데이터는 기기 설정 → Apple ID → iCloud → ParkHere에서 별도로 삭제해 주셔야 합니다. 기타 문의사항은 <span class="faq-email"></span>으로 연락해 주세요.</div>
     </div>
 
     <div class="faq-item">
