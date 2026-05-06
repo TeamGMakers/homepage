@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy (English) | Team G Makers</title>
+    <meta name="description" content="Team G Makers Privacy Policy — English reference translation">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
+    <style>
+        :root {
+            --primary: #2D3436;
+            --accent: #6C5CE7;
+            --accent-light: #A29BFE;
+            --bg: #FAFAFA;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-300: #E0E0E0;
+            --gray-500: #9E9E9E;
+            --gray-700: #616161;
+            --gray-900: #212121;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            color: var(--gray-900);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-300);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--gray-900);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ── Page Header ── */
+        .page-header {
+            padding: 140px 24px 60px;
+            text-align: center;
+            background: linear-gradient(160deg, #FAFAFA 0%, #F0EDFF 50%, #FFF0F6 100%);
+        }
+
+        .page-header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 0.92rem;
+            color: var(--gray-500);
+        }
+
+        /* ── Policy Content ── */
+        .policy-content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        .policy-notice {
+            background: #FFF8E1;
+            border: 1px solid #FFE082;
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .policy-notice strong { color: var(--gray-900); }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .policy-section p {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 10px;
+        }
+
+        .policy-section ul li {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .policy-section ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.88rem;
+        }
+
+        .policy-table th,
+        .policy-table td {
+            border: 1px solid var(--gray-300);
+            padding: 12px 14px;
+            text-align: left;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        .policy-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-500);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.82rem;
+        }
+
+        footer a {
+            color: var(--gray-500);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: var(--white); }
+
+        .footer-links { margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--gray-300);
+            }
+
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+
+            .policy-table { font-size: 0.82rem; }
+            .policy-table th, .policy-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">Team <span>G</span> Makers</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#apps">Apps</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="notice.html">Notice</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <h1>Privacy Policy</h1>
+    <p>Effective Date: April 30, 2026</p>
+</section>
+
+<!-- Policy Content -->
+<div class="policy-content">
+
+    <div class="policy-notice">
+        <strong>Notice:</strong> This English version is provided for reference only. The Korean version (<a href="privacy.html">개인정보 처리방침</a>) is the official text and shall prevail in case of any discrepancy or interpretation issue. This policy is established and disclosed in accordance with the Personal Information Protection Act of the Republic of Korea.
+    </div>
+
+    <div class="policy-section">
+        <h2>1. General Provisions</h2>
+        <p>Team G Makers (hereinafter "the Company") explains how it processes users' personal information through this Privacy Policy. This Policy applies to the Company's mobile applications and website, and is established and disclosed in accordance with Article 30 of the Personal Information Protection Act ("PIPA").</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>2. Items of Personal Information Collected and Purposes of Processing</h2>
+        <p>The Company processes only the minimum information necessary to provide its services. The Company does not require login or sign-up, and does not collect directly identifying information such as email address, real name, or phone number.</p>
+        <table class="policy-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Purpose</th>
+                    <th>Storage Location</th>
+                    <th>Legal Basis</th>
+                    <th>Required / Optional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Device / iCloud internal identifier</td>
+                    <td>Identification of user data for synchronization between the device and iCloud</td>
+                    <td>User's device (and the user's own iCloud when iCloud sync is enabled)</td>
+                    <td>Performance of contract</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>Location information (GPS)</td>
+                    <td>Recording parking location and displaying it on the map</td>
+                    <td>User's device (and the user's own iCloud when iCloud sync is enabled)</td>
+                    <td>User consent</td>
+                    <td>Optional</td>
+                </tr>
+                <tr>
+                    <td>Photos taken with the camera</td>
+                    <td>Recording photos of the vehicle and surrounding parking environment</td>
+                    <td>User's device (and the user's own iCloud when iCloud sync is enabled)</td>
+                    <td>User consent</td>
+                    <td>Optional</td>
+                </tr>
+                <tr>
+                    <td>Photos in the photo library</td>
+                    <td>Importing and attaching saved photos</td>
+                    <td>User's device (and the user's own iCloud when iCloud sync is enabled)</td>
+                    <td>User consent</td>
+                    <td>Optional</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The "Device / iCloud internal identifier" refers to an internal identifier created and managed by Apple for synchronization purposes; the Company cannot use it to identify individual users. Even if the user does not consent to optional items, the service can still be used, with only the relevant features being limited.</p>
+        <p>The Company does not install or operate any device that automatically collects personal information, such as cookies, on its website.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>3. Period of Processing and Retention</h2>
+        <p>User data is stored on the user's device, and when iCloud synchronization is used, it is also stored in the user's own iCloud. Data is retained until the earliest of the following:</p>
+        <ul>
+            <li>When the user deletes the app (data on the device)</li>
+            <li>When the user directly deletes data through the in-app data deletion feature</li>
+            <li>When the user deletes the app's data in iCloud settings (data in iCloud)</li>
+            <li>For the period required by law where a separate retention obligation applies</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>4. Procedures and Methods for Destruction of Personal Information</h2>
+        <p>Personal information whose retention period has expired is destroyed without delay.</p>
+        <ul>
+            <li>Data on the user's device: immediately deleted from the app's dedicated storage area when the app is removed or the user requests deletion.</li>
+            <li>Data stored in the user's iCloud: deleted from iCloud when the in-app deletion feature is used. Because uninstalling the app alone may not immediately remove data stored in iCloud, the user can delete it directly via Settings → Apple ID → iCloud → the relevant app on their device.</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>5. Provision of Personal Information to Third Parties</h2>
+        <p>The Company does not provide personal information to third parties except where required by law or where the user has given separate consent. There is currently no third-party provision.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>6. Outsourcing of Personal Information Processing</h2>
+        <p>The Company does not outsource the processing of users' personal information to any third party.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>7. Cross-Border Transfer of Personal Information</h2>
+        <p>The Company itself does not transfer any personal information abroad. However, when the user uses iCloud synchronization, data is stored in iCloud operated by Apple Inc. (United States) through the user's own Apple account, and such storage is governed by Apple's privacy policy (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a>).</p>
+        <p>iCloud synchronization can be disabled at any time via Settings → Apple ID → iCloud → the relevant app on the device. The user is given a one-time notice on first launch of the app that iCloud synchronization is enabled by default.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>8. Rights of the Data Subject and How to Exercise Them</h2>
+        <p>Users may at any time request to access, correct, delete, or suspend the processing of their personal information, or withdraw consent (including consent to iCloud synchronization).</p>
+        <p>Such rights may be exercised through the in-app settings menu or by emailing the Privacy Officer (Section 10). The Company will take action without delay upon receiving such a request.</p>
+        <p>If the user has suffered harm in connection with personal information, the user may seek consultation with the Personal Information Dispute Mediation Committee (1833-6972, kopico.go.kr) or the Privacy Infringement Report Center (118, privacy.kisa.or.kr).</p>
+        <p>This service is intended for adults. Children under the age of 14 must use the service with the consent of their legal guardian.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>9. Measures to Ensure the Safety of Personal Information</h2>
+        <p>The Company takes the following measures pursuant to Article 29 of PIPA:</p>
+        <ul>
+            <li>Technical measures: storage in the app's dedicated space on the device, encryption in transit (HTTPS), and access controls based on the principle of least privilege.</li>
+            <li>Administrative measures: minimizing the personnel who handle personal information, and providing prior notice and obtaining consent from the user when permissions are used.</li>
+            <li>Physical measures: not applicable, as the Company does not operate its own servers. Data stored in iCloud is protected by Apple's data center security (including end-to-end encryption where applicable).</li>
+        </ul>
+        <p>The Company has no access to directly identifying information such as the user's Apple ID email or real name.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>10. Privacy Officer and Business Information</h2>
+        <p>The Company has overall responsibility for the processing of personal information and has designated the Team G Makers Privacy Team (<span class="privacy-email"></span>) as its Privacy Officer to handle complaints and remedy grievances of data subjects. Business information required under Article 30-3 of PIPA is also disclosed together.</p>
+        <p>Requests to exercise data subject rights, such as requests for access, correction, deletion, or suspension of processing, may be submitted to the above Privacy Officer in writing or by email.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>11. Automated Decision-Making</h2>
+        <p>The Company does not currently carry out any automated decision-making (including profiling) that has a significant effect on the rights or obligations of data subjects. If introduced in the future, the criteria, procedures, and methods will be disclosed in advance in accordance with Article 37-2 of PIPA.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>12. Right to Data Portability</h2>
+        <p>Because the Company does not retain users' personal information on its own servers, there is no personal information that the Company can transfer directly. Transfer or download of data stored in iCloud may be requested through Apple account settings or Apple Support (<a href="https://support.apple.com" target="_blank" rel="noopener noreferrer">support.apple.com</a>).</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>13. Notification of Personal Information Breach</h2>
+        <p>If the Company becomes aware of any loss, theft, or leak of personal information, it will notify users without delay of the items and time of the breach, the Company's response measures, the measures the user can take, and contact information for reporting and consultation. As the Company does not separately retain user contact information, in accordance with the proviso of Article 40, Paragraph 1 of the Enforcement Decree of PIPA, such notification will be substituted by posting on the <a href="notice.html">Notice page</a> and within the app for at least 30 days.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>14. Changes to This Privacy Policy</h2>
+        <p>If this Policy is amended, the Company will provide notice through the <a href="notice.html">Notice page</a> and in-app notice at least 7 days before the effective date (at least 30 days in advance for material changes).</p>
+        <p>Revision history</p>
+        <ul>
+            <li>January 1, 2025 — Initial version.</li>
+            <li>April 30, 2026 — Updated to reflect the amended Personal Information Protection Act (effective September 11, 2026) and statutorily required items; added notices regarding iCloud synchronization and breach notification procedures (advance notice given on April 23, 2026).</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="notice.html">Notice</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy (Korean)</a>
+    </div>
+    <p>&copy; 2025-2026 Team G Makers. All rights reserved.</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Email obfuscation
+    (function() {
+        const u = 'connie'; const d = 'teamgmakers.com';
+        document.querySelectorAll('.privacy-email').forEach(el => {
+            el.textContent = u + '@' + d;
+        });
+    })();
+</script>
+
+</body>
+</html>
